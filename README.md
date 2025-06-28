@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="assets/favicon.ico" alt="PetPooja-AI Logo" width="120" />
+  <img src="assets/logo.png" alt="PetPooja-AI Logo" width="120" style="border-radius: 50%;" />
 </p>
+
 
 <h1 align="center"> PetPooja AI-Powered Food Ordering Platform</h1>
 
