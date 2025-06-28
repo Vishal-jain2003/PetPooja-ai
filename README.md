@@ -1,4 +1,21 @@
-#  PetPooja-AI — AI-Powered Food Ordering System
+
+
+<h1 align="center"> PetPooja-AI – AI-Powered Food Ordering Platform</h1>
+
+<p align="center">
+  <b>Live Demo:</b> <a href="https://petpooja-ai.vercel.app" target="_blank">https://petpooja-ai.vercel.app</a><br/>
+  <i>Frontend: React.js • Backend: Spring Boot • DB: MongoDB • AI: Gemini API • Payments: Razorpay</i>
+</p>
+
+---
+
+> ⚠️ **Note**: The backend is hosted on [Render] so the first request may take **20–30 seconds** to spin up (cold start).
+> Please wait a few moments for food data or Chef AI to load properly.
+
+---
+
+
+
 
 A full-stack food ordering system powered by **Spring Boot**, **React**, **Gemini AI**, and **Razorpay**.
 It includes secure authentication, smart recipe suggestions, admin/user separation, and full e-commerce functionality.
