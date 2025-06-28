@@ -1,6 +1,8 @@
+<p align="center">
+  <img src="./src/assets/logo.png" alt="PetPooja-AI Logo" width="120" />
+</p>
 
-
-<h1 align="center"> PetPooja-AI – AI-Powered Food Ordering Platform</h1>
+<h1 align="center"> PetPooja AI-Powered Food Ordering Platform</h1>
 
 <p align="center">
   <b>Live Demo:</b> <a href="https://petpooja-ai.vercel.app" target="_blank">https://petpooja-ai.vercel.app</a><br/>
