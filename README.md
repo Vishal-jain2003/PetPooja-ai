@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="PetPooja-AI Logo" width="120" style="border-radius: 100%;" />
+  <img src="assets/logo.png" alt="PetPooja-AI Logo" width="120"  style="border-radius: 50%; border: 2px solid #ddd;"/>
 </p>
 
 
