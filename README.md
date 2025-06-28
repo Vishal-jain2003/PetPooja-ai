@@ -217,12 +217,7 @@ frontend/src/
 
 ---
 
-## 🎨 Styling
 
-- Admin Panel: Minimal custom CSS.
-- User Panel: Combination of **custom CSS** and possibly **Tailwind/Bootstrap** (based on your stack, update here if needed).
-
----
 
 ## 🔐 Routing
 
@@ -316,7 +311,7 @@ This section explains how data flows across the system when a user interacts wit
 
 ---
 
-✅ This architecture ensures scalability, modularity, and real-time integration of AI and payment systems.
+
 
 
 
