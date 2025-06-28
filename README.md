@@ -17,16 +17,18 @@ The backend follows a clean layered architecture using Java Spring Boot. It expo
 
 ### 📁 Package: `in.vishal.foodiesapi`
 
+```
 in.vishal.foodiesapi/
-├── config/
-├── controller/
-├── entity/
-├── filters/
-├── io/
-├── repository/
-├── service/
-├── util/
-├── FoodiesapiApplication.java
+├── config/             # Spring Security, Cloudinary setup
+├── controller/         # All REST APIs (Auth, User, Food, Orders, ChefAI, etc.)
+├── entity/             # MongoDB @Document models (UserEntity, FoodEntity, etc.)
+├── filters/            # JWT authentication filter
+├── io/                 # Request & Response DTOs
+├── repository/         # Spring Data MongoDB Repositories
+├── service/            # Interfaces & Implementations (Business Logic)
+├── util/               # Utility classes like JWT and Cloudinary helpers
+└── FoodiesapiApplication.java  # Main Spring Boot application entry point
+```
 
 
 
