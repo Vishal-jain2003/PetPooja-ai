@@ -42,47 +42,47 @@ Here’s a complete walkthrough of the PetPooja-AI website for both users and ad
 ### 👨‍🍳 User Flow
 
 #### 🔐 Login Page
-<img src="assets/login.png" alt="Login Page" width="700"/>
+<img src="assets/login.jpg" alt="Login Page" width="700"/>
 
 #### 🏠 Home Page
-<img src="assets/homepage.png" alt="Home Page" width="700"/>
+<img src="assets/homepage.jpg" alt="Home Page" width="700"/>
 
 #### 🍽️ Display Food
-<img src="assets/displayfood.png" alt="Display Food Page" width="700"/>
+<img src="assets/displayfood.jpg" alt="Display Food Page" width="700"/>
 
 #### 🔍 Explore by Search
-<img src="assets/explore.png" alt="Explore Search Page" width="700"/>
+<img src="assets/explore.jpg" alt="Explore Search Page" width="700"/>
 
 #### 🤖 Chef AI Suggestions
-<img src="assets/chefai.png" alt="Chef AI Suggestions" width="700"/>
+<img src="assets/chefai.jpg" alt="Chef AI Suggestions" width="700"/>
 
 #### 🛒 Cart Page
-<img src="assets/cart.png" alt="Cart Page" width="700"/>
+<img src="assets/cart.jpg" alt="Cart Page" width="700"/>
 
 #### 🚚 Order Placement Page
-<img src="assets/orderpage.png" alt="Order Page" width="700"/>
+<img src="assets/orderpage.jpg" alt="Order Page" width="700"/>
 
 #### 💳 Razorpay Payment Flow
-<img src="assets/rz1.png" alt="Razorpay 1" width="700"/>
-<img src="assets/rz2.png" alt="Razorpay 2" width="700"/>
-<img src="assets/rz3.png" alt="Razorpay 3" width="700"/>
-<img src="assets/rz4.png" alt="Razorpay 4" width="700"/>
+<img src="assets/rz1.jpg" alt="Razorpay 1" width="700"/>
+<img src="assets/rz2.jpg" alt="Razorpay 2" width="700"/>
+<img src="assets/rz3.jpg" alt="Razorpay 3" width="700"/>
+<img src="assets/rz4.jpg" alt="Razorpay 4" width="700"/>
 
 #### 📦 My Orders
-<img src="assets/myorders.png" alt="My Orders Page" width="700"/>
+<img src="assets/myorders.jpg" alt="My Orders Page" width="700"/>
 
 ---
 
 ### 🧑‍💼 Admin Flow
 
 #### 🍕 Add Food
-<img src="assets/admin_addfood.png" alt="Admin Add Food" width="700"/>
+<img src="assets/admin_addfood.jpg" alt="Admin Add Food" width="700"/>
 
 #### 📋 List Food
-<img src="assets/admin_listfood.png" alt="Admin List Food" width="700"/>
+<img src="assets/admin_listfood.jpg" alt="Admin List Food" width="700"/>
 
 #### 📦 Orders Management
-<img src="assets/admin_orders.png" alt="Admin Orders Page" width="700"/>
+<img src="assets/admin_orders.jpg" alt="Admin Orders Page" width="700"/>
 
 
 
