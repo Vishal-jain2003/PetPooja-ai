@@ -138,3 +138,188 @@ Main entry point to the Spring Boot application.
 - `application.properties`: Configs (Cloudinary keys, Mongo URI, Razorpay, etc.)
 
 
+---
+
+## 🌐 Frontend (React) Project Structure
+
+The frontend is built using **React.js** and structured into two separate panels:
+
+- 🧑‍🍳 **Admin Panel** – for managing food items and orders.
+- 👨‍👩‍👧‍👦 **User Panel** – for placing orders, exploring food, and interacting with Chef AI.
+
+---
+
+### 🧑‍🍳 Admin Panel (`/admin`)
+
+```
+frontend/src/
+├── components/
+│ ├── Menubar/ # Top navigation for admin
+│ └── Sidebar/ # Side navigation links
+├── pages/
+│ ├── AddFood/ # Form to add new food item
+│ ├── ListFood/ # List and manage food items
+│ └── Orders/ # View all customer orders
+├── services/
+│ └── foodService.js # API calls for admin (CRUD food)
+├── App.jsx, App.css
+```
+
+
+
+> ⚙️ Functionality: Admin can add, update, and delete food items with images (via Cloudinary), and manage orders in real-time.
+
+---
+
+### 👤 User Panel (Main Website)
+
+
+```
+frontend/src/
+├── components/
+│ ├── Header/ # Site header with navigation
+│ ├── Login/, Register/ # Auth components
+│ ├── ExploreMenu/ # Lists categories and items
+│ ├── FoodItem/ # Food card component
+│ └── FoodDisplay/ # Display food details
+├── context/
+│ └── StoreContext.jsx # Global context for user & cart
+├── pages/
+│ ├── Home/ # Landing page
+│ ├── Explore/ # Browse food items
+│ ├── FoodDetails/ # Individual food page
+│ ├── Cart/ # Cart with items
+│ ├── PlaceOrder/ # Address form + Razorpay
+│ ├── MyOrders/ # View previous orders
+│ ├── ChefAI/ # AI-generated recipe suggestions
+│ └── Contact/ # Contact form
+├── services/
+│ ├── authService.js # Login/register APIs
+│ ├── cartService.js # Cart-related APIs
+│ └── foodService.js # Fetch food and order data
+├── util/
+│ └── cartUtils.js # Cart helper functions
+├── App.jsx, App.css
+```
+
+
+
+> 💡 Functionality: Users can explore food, get smart recipe suggestions using **Gemini AI**, add items to the cart, pay via **Razorpay**, and view order history.
+
+---
+
+## 🧩 State Management
+
+- Uses `StoreContext.jsx` (React Context API) to manage:
+  - 🧑 Logged-in user state
+  - 🛒 Cart items
+  - 💬 Notifications and UI state
+
+---
+
+## 🎨 Styling
+
+- Admin Panel: Minimal custom CSS.
+- User Panel: Combination of **custom CSS** and possibly **Tailwind/Bootstrap** (based on your stack, update here if needed).
+
+---
+
+## 🔐 Routing
+
+- React Router used for:
+  - Public Pages (`/`, `/explore`, `/login`)
+  - Protected Pages (`/cart`, `/placeorder`, `/orders`)
+  - Admin Pages (`/admin/add-food`, `/admin/orders`)
+
+---
+---
+
+## 🔄 API Flow – From Frontend to Backend to External Services
+
+This section explains how data flows across the system when a user interacts with the app:
+
+---
+
+### 1️⃣ **User Registration & Login**
+- 🔸 **Frontend**: `authService.js` → API call with user credentials
+- 🔸 **Backend**: `AuthController` validates via Spring Security
+- 🔸 🔐 JWT Token is generated using `JwtUtil` and sent back
+- ✅ Token is stored in localStorage and used for secured routes
+
+---
+
+### 2️⃣ **Explore & View Food Items**
+- 🔸 **Frontend**: `foodService.js` fetches food list
+- 🔸 **Backend**: `FoodController.getAllFoods()` → fetches from `FoodRepository`
+- 🔸 **Database**: MongoDB returns all food items
+
+---
+
+### 3️⃣ **Add to Cart & Manage Cart**
+- 🔸 **Frontend**: `cartService.js` sends add/remove item requests
+- 🔸 **Backend**: `CartController` → `CartServiceImpl` → `CartRepository`
+- 🔄 Cart state is synced per user and returned to update UI
+
+---
+
+### 4️⃣ **Place Order with Address & Payment**
+- 🔸 **Frontend**: On checkout, order address is submitted
+- 🔸 **Backend**: 
+  - `OrderController` creates order
+  - `Razorpay API` is triggered
+- 🔸 **External**: Razorpay returns payment ID
+- 🔸 **Backend**: Confirms payment and stores order in MongoDB
+
+---
+
+### 5️⃣ **View My Orders**
+- 🔸 **Frontend**: Calls `orderService.js`
+- 🔸 **Backend**: `OrderController.getOrdersByUser()` returns orders
+- 🧾 Orders shown in MyOrders page
+
+---
+
+### 6️⃣ **AI Recipe Suggestions (Chef AI)**
+- 🔸 **Frontend**: User gives preference → sent via `ChefAI.jsx`
+- 🔸 **Backend**: `GeminiController` → `GeminiService` calls Gemini API
+- 🔸 **External**: Gemini returns recipe suggestion
+- 🔸 **Frontend**: UI displays generated recipe with ingredients & instructions
+
+---
+
+### 7️⃣ **Image Upload for Food (Admin Panel)**
+- 🔸 **Frontend**: Admin uploads image via `AddFood.jsx`
+- 🔸 **Backend**: `FoodController.addFood()` calls `CloudinaryImage.uploadImage()`
+- 🔸 **External**: Cloudinary stores image and returns `secure_url` + `public_id`
+- 🔸 **Backend**: URL is saved with food data in MongoDB
+
+---
+
+### 8️⃣ **Contact Form (Email Support)**
+- 🔸 **Frontend**: User fills form on `Contact.jsx`
+- 🔸 **Backend**: `ContactController` → `MailService` sends email to admin
+
+---
+
+## 🧠 Summary
+
+| Interaction          | Frontend Component     | Backend Controller    | External API        |
+|----------------------|------------------------|------------------------|----------------------|
+| Login/Register       | `authService.js`       | `AuthController`       | —                    |
+| View Foods           | `foodService.js`       | `FoodController`       | MongoDB              |
+| Cart Operations      | `cartService.js`       | `CartController`       | MongoDB              |
+| Place Order + Pay    | `PlaceOrder.jsx`       | `OrderController`      | Razorpay             |
+| My Orders            | `MyOrders.jsx`         | `OrderController`      | MongoDB              |
+| Chef AI Suggestions  | `ChefAI.jsx`           | `GeminiController`     | Gemini API           |
+| Image Upload         | `AddFood.jsx`          | `FoodController`       | Cloudinary           |
+| Contact Support      | `Contact.jsx`          | `ContactController`    | SMTP (via MailService) |
+
+---
+
+✅ This architecture ensures scalability, modularity, and real-time integration of AI and payment systems.
+
+
+
+
+
+
