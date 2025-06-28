@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/assets/logo.png" alt="PetPooja-AI Logo" width="120" />
+  <img src="assets/logo.png" alt="PetPooja-AI Logo" width="120" />
 </p>
 
 <h1 align="center"> PetPooja AI-Powered Food Ordering Platform</h1>
